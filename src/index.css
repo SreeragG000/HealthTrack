@@ -2,61 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-/* Shahi Medicals Design System - Medical/Pharmacy Theme
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    --background: 0 0% 98%;
-    --foreground: 210 40% 15%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 210 40% 15%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 15%;
-
-    --primary: 210 100% 40%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 210 100% 50%;
-
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 40% 15%;
-
-    --muted: 210 20% 95%;
-    --muted-foreground: 210 15% 45%;
-
-    --accent: 140 40% 50%;
-    --accent-foreground: 0 0% 100%;
-
-    --success: 140 60% 45%;
-    --success-foreground: 0 0% 100%;
-
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 210 20% 90%;
-    --input: 210 20% 92%;
-    --ring: 210 100% 40%;
-
-    /* Medical themed gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-
-    /* Professional shadows */
-    --shadow-card: 0 4px 20px -4px hsl(var(--primary) / 0.1);
-    --shadow-hover: 0 8px 30px -8px hsl(var(--primary) / 0.2);
-    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
-
-    /* Smooth transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-    --radius: 0.5rem;
-=======
 /* HealthTrack Futuristic Dark Theme Design System */
 
 @layer base {
@@ -112,7 +57,6 @@ All colors MUST be HSL.
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
->>>>>>> 0af031b (Initial commit)
 
     --sidebar-background: 0 0% 98%;
 
@@ -176,9 +120,6 @@ All colors MUST be HSL.
   }
 
   body {
-<<<<<<< HEAD
-    @apply bg-background text-foreground;
-=======
     @apply bg-background text-foreground overflow-x-hidden;
     background: radial-gradient(ellipse at top, hsl(240 10% 6%) 0%, hsl(240 10% 3.9%) 50%);
     min-height: 100vh;
@@ -231,6 +172,5 @@ All colors MUST be HSL.
   .hover-glow:hover {
     box-shadow: var(--shadow-neon);
     transform: translateY(-2px);
->>>>>>> 0af031b (Initial commit)
   }
 }

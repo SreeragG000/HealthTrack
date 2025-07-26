@@ -26,16 +26,7 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-<<<<<<< HEAD
 					foreground: 'hsl(var(--primary-foreground))'
-=======
-<<<<<<< HEAD
-					foreground: 'hsl(var(--primary-foreground))',
-					glow: 'hsl(var(--primary-glow))'
-=======
-					foreground: 'hsl(var(--primary-foreground))'
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -53,16 +44,6 @@ export default {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))'
 				},
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-				success: {
-					DEFAULT: 'hsl(var(--success))',
-					foreground: 'hsl(var(--success-foreground))'
-				},
-=======
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
 					foreground: 'hsl(var(--popover-foreground))'
@@ -97,16 +78,6 @@ export default {
 					to: { height: '0' }
 				},
 				'fade-in': {
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-					'0%': { opacity: '0', transform: 'translateY(10px)' },
-					'100%': { opacity: '1', transform: 'translateY(0)' }
-				},
-				'slide-up': {
-=======
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 					'0%': { opacity: '0', transform: 'translateY(20px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
 				},
@@ -114,69 +85,27 @@ export default {
 					'0%': { transform: 'scale(0.95)', opacity: '0' },
 					'100%': { transform: 'scale(1)', opacity: '1' }
 				},
-<<<<<<< HEAD
 				'slide-up': {
 					'0%': { transform: 'translateY(100%)' },
 					'100%': { transform: 'translateY(0)' }
 				},
 				'pulse-glow': {
-=======
-<<<<<<< HEAD
-				'pulse-glow': {
-					'0%, 100%': { boxShadow: '0 0 0 0 hsl(var(--primary) / 0.4)' },
-					'50%': { boxShadow: '0 0 20px 5px hsl(var(--primary) / 0.1)' }
-=======
-				'slide-up': {
-					'0%': { transform: 'translateY(100%)' },
-					'100%': { transform: 'translateY(0)' }
-				},
-				'pulse-glow': {
->>>>>>> 27182ce (Initial commit)
 					'0%, 100%': { boxShadow: '0 0 20px hsl(var(--primary) / 0.3)' },
 					'50%': { boxShadow: '0 0 40px hsl(var(--primary) / 0.6)' }
 				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0px)' },
 					'50%': { transform: 'translateY(-10px)' }
-<<<<<<< HEAD
-=======
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-<<<<<<< HEAD
 				'fade-in': 'fade-in 0.6s ease-out',
 				'scale-in': 'scale-in 0.4s ease-out',
 				'slide-up': 'slide-up 0.5s ease-out',
 				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
 				'float': 'float 6s ease-in-out infinite'
-=======
-<<<<<<< HEAD
-				'fade-in': 'fade-in 0.4s ease-out',
-				'slide-up': 'slide-up 0.5s ease-out',
-				'scale-in': 'scale-in 0.3s ease-out',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
-			},
-			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)'
-			},
-			boxShadow: {
-				'card': 'var(--shadow-card)',
-				'hover': 'var(--shadow-hover)',
-				'glow': 'var(--shadow-glow)'
-=======
-				'fade-in': 'fade-in 0.6s ease-out',
-				'scale-in': 'scale-in 0.4s ease-out',
-				'slide-up': 'slide-up 0.5s ease-out',
-				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-				'float': 'float 6s ease-in-out infinite'
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 			}
 		}
 	},

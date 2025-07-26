@@ -10,36 +10,6 @@ export type Database = {
   // Allows to automatically instanciate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
-<<<<<<< HEAD
-    PostgrestVersion: "12.2.3 (519615d)"
-  }
-  public: {
-    Tables: {
-      admin_users: {
-        Row: {
-          created_at: string
-          email: string
-          id: string
-        }
-        Insert: {
-          created_at?: string
-          email: string
-          id?: string
-        }
-        Update: {
-          created_at?: string
-          email?: string
-          id?: string
-        }
-        Relationships: []
-      }
-      cart_items: {
-        Row: {
-          created_at: string
-          id: string
-          product_id: string
-          quantity: number
-=======
     PostgrestVersion: "12.2.12 (cd3cf9e)"
   }
   public: {
@@ -54,17 +24,11 @@ export type Database = {
           name: string
           other_muscles: string[] | null
           primary_muscle_group: string | null
->>>>>>> 0af031b (Initial commit)
           updated_at: string
           user_id: string
         }
         Insert: {
           created_at?: string
-<<<<<<< HEAD
-          id?: string
-          product_id: string
-          quantity?: number
-=======
           equipment?: string | null
           exercise_type?: string | null
           id?: string
@@ -72,100 +36,11 @@ export type Database = {
           name: string
           other_muscles?: string[] | null
           primary_muscle_group?: string | null
->>>>>>> 0af031b (Initial commit)
           updated_at?: string
           user_id: string
         }
         Update: {
           created_at?: string
-<<<<<<< HEAD
-          id?: string
-          product_id?: string
-          quantity?: number
-          updated_at?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "cart_items_product_id_fkey"
-            columns: ["product_id"]
-            isOneToOne: false
-            referencedRelation: "products"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      order_items: {
-        Row: {
-          created_at: string
-          id: string
-          order_id: string
-          price: number
-          product_id: string
-          quantity: number
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          order_id: string
-          price: number
-          product_id: string
-          quantity: number
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          order_id?: string
-          price?: number
-          product_id?: string
-          quantity?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "order_items_order_id_fkey"
-            columns: ["order_id"]
-            isOneToOne: false
-            referencedRelation: "orders"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "order_items_product_id_fkey"
-            columns: ["product_id"]
-            isOneToOne: false
-            referencedRelation: "products"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      orders: {
-        Row: {
-          created_at: string
-          id: string
-          phone: string
-          shipping_address: string
-          status: string
-          total_amount: number
-          updated_at: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          phone: string
-          shipping_address: string
-          status?: string
-          total_amount: number
-          updated_at?: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          phone?: string
-          shipping_address?: string
-          status?: string
-          total_amount?: number
-=======
           equipment?: string | null
           exercise_type?: string | null
           id?: string
@@ -173,61 +48,11 @@ export type Database = {
           name?: string
           other_muscles?: string[] | null
           primary_muscle_group?: string | null
->>>>>>> 0af031b (Initial commit)
           updated_at?: string
           user_id?: string
         }
         Relationships: []
       }
-<<<<<<< HEAD
-      products: {
-        Row: {
-          category: string | null
-          created_at: string
-          description: string | null
-          id: string
-          image_url: string | null
-          is_active: boolean
-          name: string
-          price: number
-          stock_quantity: number
-          updated_at: string
-        }
-        Insert: {
-          category?: string | null
-          created_at?: string
-          description?: string | null
-          id?: string
-          image_url?: string | null
-          is_active?: boolean
-          name: string
-          price: number
-          stock_quantity?: number
-          updated_at?: string
-        }
-        Update: {
-          category?: string | null
-          created_at?: string
-          description?: string | null
-          id?: string
-          image_url?: string | null
-          is_active?: boolean
-          name?: string
-          price?: number
-          stock_quantity?: number
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      profiles: {
-        Row: {
-          address: string | null
-          created_at: string
-          email: string
-          full_name: string | null
-          id: string
-          phone: string | null
-=======
       workout_plan_exercises: {
         Row: {
           created_at: string
@@ -349,19 +174,10 @@ export type Database = {
           notes: string | null
           scheduled_date: string
           type: Database["public"]["Enums"]["workout_type"]
->>>>>>> 0af031b (Initial commit)
           updated_at: string
           user_id: string
         }
         Insert: {
-<<<<<<< HEAD
-          address?: string | null
-          created_at?: string
-          email: string
-          full_name?: string | null
-          id?: string
-          phone?: string | null
-=======
           calories_burned?: number | null
           completed?: boolean
           completed_at?: string | null
@@ -373,19 +189,10 @@ export type Database = {
           notes?: string | null
           scheduled_date?: string
           type?: Database["public"]["Enums"]["workout_type"]
->>>>>>> 0af031b (Initial commit)
           updated_at?: string
           user_id: string
         }
         Update: {
-<<<<<<< HEAD
-          address?: string | null
-          created_at?: string
-          email?: string
-          full_name?: string | null
-          id?: string
-          phone?: string | null
-=======
           calories_burned?: number | null
           completed?: boolean
           completed_at?: string | null
@@ -397,7 +204,6 @@ export type Database = {
           notes?: string | null
           scheduled_date?: string
           type?: Database["public"]["Enums"]["workout_type"]
->>>>>>> 0af031b (Initial commit)
           updated_at?: string
           user_id?: string
         }
@@ -408,15 +214,6 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-<<<<<<< HEAD
-      is_admin: {
-        Args: Record<PropertyKey, never>
-        Returns: boolean
-      }
-    }
-    Enums: {
-      [_ in never]: never
-=======
       [_ in never]: never
     }
     Enums: {
@@ -429,7 +226,6 @@ export type Database = {
         | "pilates"
         | "hiit"
         | "other"
->>>>>>> 0af031b (Initial commit)
     }
     CompositeTypes: {
       [_ in never]: never
@@ -556,9 +352,6 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-<<<<<<< HEAD
-    Enums: {},
-=======
     Enums: {
       workout_type: [
         "cardio",
@@ -571,6 +364,5 @@ export const Constants = {
         "other",
       ],
     },
->>>>>>> 0af031b (Initial commit)
   },
 } as const

@@ -2,15 +2,7 @@
 
 ## Project info
 
-<<<<<<< HEAD
 **URL**: https://lovable.dev/projects/41a237c9-7ac2-4dc8-84d7-2a9f2696c024
-=======
-<<<<<<< HEAD
-**URL**: https://lovable.dev/projects/e15d541b-9870-40b5-9b7b-f650634ba3ac
-=======
-**URL**: https://lovable.dev/projects/41a237c9-7ac2-4dc8-84d7-2a9f2696c024
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 
 ## How can I edit this code?
 
@@ -18,15 +10,7 @@ There are several ways of editing your application.
 
 **Use Lovable**
 
-<<<<<<< HEAD
 Simply visit the [Lovable Project](https://lovable.dev/projects/41a237c9-7ac2-4dc8-84d7-2a9f2696c024) and start prompting.
-=======
-<<<<<<< HEAD
-Simply visit the [Lovable Project](https://lovable.dev/projects/e15d541b-9870-40b5-9b7b-f650634ba3ac) and start prompting.
-=======
-Simply visit the [Lovable Project](https://lovable.dev/projects/41a237c9-7ac2-4dc8-84d7-2a9f2696c024) and start prompting.
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -78,15 +62,7 @@ This project is built with:
 
 ## How can I deploy this project?
 
-<<<<<<< HEAD
 Simply open [Lovable](https://lovable.dev/projects/41a237c9-7ac2-4dc8-84d7-2a9f2696c024) and click on Share -> Publish.
-=======
-<<<<<<< HEAD
-Simply open [Lovable](https://lovable.dev/projects/e15d541b-9870-40b5-9b7b-f650634ba3ac) and click on Share -> Publish.
-=======
-Simply open [Lovable](https://lovable.dev/projects/41a237c9-7ac2-4dc8-84d7-2a9f2696c024) and click on Share -> Publish.
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
 
 ## Can I connect a custom domain to my Lovable project?
 
@@ -95,11 +71,3 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-# ShahiMedicals
-# ShahiMedicals
-=======
->>>>>>> 0af031b (Initial commit)
->>>>>>> 27182ce (Initial commit)
