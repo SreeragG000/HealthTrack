@@ -132,41 +132,62 @@ const WorkoutRoutines = () => {
   };
 
   const createRoutine = async (name: string, description: string) => {
-    const totalDuration = selectedWorkouts.reduce((sum, workoutId) => {
-      const workout = workouts.find(w => w.id === workoutId);
-      return sum + (workout?.duration_minutes || 0);
-    }, 0);
+    try {
+      const { data: { user } } = await supabase.auth.getUser();
+      if (!user) {
+        toast({
+          title: "Authentication required",
+          description: "Please sign in to create a routine",
+          variant: "destructive",
+        });
+        return;
+      }
 
-    const totalCalories = selectedWorkouts.reduce((sum, workoutId) => {
-      const workout = workouts.find(w => w.id === workoutId);
-      return sum + (workout?.calories_burned || 0);
-    }, 0);
+      const totalDuration = selectedWorkouts.reduce((sum, workoutId) => {
+        const workout = workouts.find(w => w.id === workoutId);
+        return sum + (workout?.duration_minutes || 0);
+      }, 0);
 
-    const { data, error } = await supabase
-      .from('workout_routines')
-      .insert({
-        name,
-        description,
-        workout_ids: selectedWorkouts,
-        total_duration: totalDuration,
-        total_calories: totalCalories,
-      })
-      .select()
-      .single();
+      const totalCalories = selectedWorkouts.reduce((sum, workoutId) => {
+        const workout = workouts.find(w => w.id === workoutId);
+        return sum + (workout?.calories_burned || 0);
+      }, 0);
 
-    if (error) {
+      const { data, error } = await supabase
+        .from('workout_routines')
+        .insert({
+          name,
+          description,
+          workout_ids: selectedWorkouts,
+          total_duration: totalDuration,
+          total_calories: totalCalories,
+          user_id: user.id, // This was missing!
+        })
+        .select()
+        .single();
+
+      if (error) {
+        console.error('Error creating routine:', error);
+        toast({
+          title: "Error creating routine",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Routine created successfully!",
+        });
+        setIsCreateOpen(false);
+        setSelectedWorkouts([]);
+        fetchRoutines();
+      }
+    } catch (error) {
+      console.error('Unexpected error:', error);
       toast({
         title: "Error creating routine",
-        description: error.message,
+        description: "An unexpected error occurred",
         variant: "destructive",
       });
-    } else {
-      toast({
-        title: "Routine created successfully!",
-      });
-      setIsCreateOpen(false);
-      setSelectedWorkouts([]);
-      fetchRoutines();
     }
   };
 
@@ -380,6 +401,9 @@ const WorkoutRoutines = () => {
         {/* Add Exercise Dialog */}
         <Dialog open={isAddExerciseOpen} onOpenChange={setIsAddExerciseOpen}>
           <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Add Exercise</DialogTitle>
+            </DialogHeader>
             <ExerciseForm
               onSave={(exercise) => {
                 setExercises(prev => [...prev, exercise]);

@@ -53,6 +53,57 @@ export type Database = {
         }
         Relationships: []
       }
+      user_stats: {
+        Row: {
+          calories_burned: number
+          calories_consumed: number
+          calories_goal: number
+          created_at: string
+          fitness_tasks_completed: number
+          fitness_tasks_total: number
+          goal_progress: number
+          id: string
+          steps_today: number
+          streak_days: number
+          updated_at: string
+          user_id: string
+          weekly_workout_completed: number
+          weekly_workout_goal: number
+        }
+        Insert: {
+          calories_burned?: number
+          calories_consumed?: number
+          calories_goal?: number
+          created_at?: string
+          fitness_tasks_completed?: number
+          fitness_tasks_total?: number
+          goal_progress?: number
+          id?: string
+          steps_today?: number
+          streak_days?: number
+          updated_at?: string
+          user_id: string
+          weekly_workout_completed?: number
+          weekly_workout_goal?: number
+        }
+        Update: {
+          calories_burned?: number
+          calories_consumed?: number
+          calories_goal?: number
+          created_at?: string
+          fitness_tasks_completed?: number
+          fitness_tasks_total?: number
+          goal_progress?: number
+          id?: string
+          steps_today?: number
+          streak_days?: number
+          updated_at?: string
+          user_id?: string
+          weekly_workout_completed?: number
+          weekly_workout_goal?: number
+        }
+        Relationships: []
+      }
       workout_plan_exercises: {
         Row: {
           created_at: string

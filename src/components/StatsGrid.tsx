@@ -1,28 +1,32 @@
 import { Activity, Target, Flame, Trophy } from 'lucide-react';
 
-const StatsGrid = () => {
+interface StatsGridProps {
+  userStats: any;
+}
+
+const StatsGrid = ({ userStats }: StatsGridProps) => {
   const stats = [
     {
       icon: Activity,
-      value: '12.5K',
+      value: userStats?.steps_today?.toLocaleString() || '0',
       label: 'Steps Today',
       color: 'text-accent'
     },
     {
       icon: Flame,
-      value: '340',
+      value: userStats?.calories_burned?.toString() || '0',
       label: 'Calories Burned',
       color: 'text-primary'
     },
     {
       icon: Target,
-      value: '85%',
+      value: `${userStats?.goal_progress || 0}%`,
       label: 'Goal Progress',
       color: 'text-green-400'
     },
     {
       icon: Trophy,
-      value: '7',
+      value: userStats?.streak_days?.toString() || '0',
       label: 'Streak Days',
       color: 'text-yellow-400'
     }

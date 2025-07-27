@@ -132,14 +132,7 @@ const ExerciseForm = ({ onSave, onCancel }: ExerciseFormProps) => {
   };
 
   return (
-    <div className="space-y-6 p-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl font-semibold text-foreground">Create Exercise</h2>
-        <Button onClick={onCancel} variant="outline" size="sm">
-          Cancel
-        </Button>
-      </div>
-
+    <div className="space-y-6">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* Image Upload */}
         <div className="flex flex-col items-center space-y-4">
@@ -256,13 +249,18 @@ const ExerciseForm = ({ onSave, onCancel }: ExerciseFormProps) => {
           </Select>
         </div>
 
-        <Button 
-          type="submit" 
-          className="w-full" 
-          disabled={!name.trim() || isSubmitting}
-        >
-          {isSubmitting ? 'Saving...' : 'Save Exercise'}
-        </Button>
+        <div className="flex gap-3">
+          <Button 
+            type="submit" 
+            className="flex-1" 
+            disabled={!name.trim() || isSubmitting}
+          >
+            {isSubmitting ? 'Saving...' : 'Save Exercise'}
+          </Button>
+          <Button type="button" onClick={onCancel} variant="outline">
+            Cancel
+          </Button>
+        </div>
       </form>
     </div>
   );
