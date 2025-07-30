@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Plus, Play, Edit, Trash2, Clock, Target, Search, MoreVertical, ChevronDown, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Plus, Play, Edit, Trash2, Clock, Target, Search, MoreVertical, ChevronDown, ChevronRight, Utensils } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -49,6 +50,7 @@ interface Exercise {
 }
 
 const WorkoutRoutines = () => {
+  const navigate = useNavigate();
   const [routines, setRoutines] = useState<WorkoutRoutine[]>([]);
   const [workouts, setWorkouts] = useState<Workout[]>([]);
   const [exercises, setExercises] = useState<Exercise[]>([]);
@@ -212,19 +214,30 @@ const WorkoutRoutines = () => {
   };
 
   const startRoutine = (routine: WorkoutRoutine) => {
-    const routineWorkouts = routine.workout_ids.map((workoutId, index) => {
-      const workout = workouts.find(w => w.id === workoutId);
-      return {
-        ...workout!,
-        order_index: index,
-      };
-    });
+    console.log('Starting routine:', routine);
+    console.log('Available exercises:', exercises);
+    
+    // The workout_ids actually contain exercise IDs, so we need to map exercises
+    const routineExercises = routine.workout_ids
+      .map((exerciseId, index) => {
+        const exercise = exercises.find(e => e.id === exerciseId);
+        console.log(`Looking for exercise ${exerciseId}, found:`, exercise);
+        return exercise ? {
+          ...exercise,
+          order_index: index,
+        } : null;
+      })
+      .filter(Boolean); // Remove any null/undefined exercises
 
-    setCurrentRoutine(routine);
-    setRoutineWorkouts(routineWorkouts);
-    setCurrentWorkoutIndex(0);
-    setTimer(routineWorkouts[0]?.duration_minutes * 60 || 0);
-    setIsPerformOpen(true);
+    console.log('Routine exercises to pass:', routineExercises);
+
+    // Navigate to workout logger with routine data
+    navigate('/workout-logger', {
+      state: {
+        routine,
+        exercises: routineExercises // Pass exercises instead of workouts
+      }
+    });
   };
 
   const startWorkout = () => {
@@ -313,9 +326,13 @@ const WorkoutRoutines = () => {
               </DialogContent>
             </Dialog>
             
-            <Button className="glass-card hover-lift h-12 justify-start" variant="outline">
-              <Search className="h-5 w-5 mr-3" />
-              Explore
+            <Button 
+              className="glass-card hover-lift h-12 justify-start" 
+              variant="outline"
+              onClick={() => navigate('/food')}
+            >
+              <Utensils className="h-5 w-5 mr-3" />
+              Food
             </Button>
           </div>
         </div>
